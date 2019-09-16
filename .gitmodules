@@ -1,0 +1,18 @@
+[submodule "migen"]
+	path = migen
+	url = https://github.com/m-labs/migen.git
+[submodule "litex"]
+	path = litex
+	url = https://github.com/enjoy-digital/litex.git
+[submodule "litedram"]
+	path = litedram
+	url = https://github.com/enjoy-digital/litedram.git
+[submodule "usb-test-suite-testbenches"]
+	path = usb-test-suite-testbenches
+	url = https://github.com/antmicro/usb-test-suite-testbenches.git
+[submodule "usb-test-suite-cocotb-usb"]
+	path = usb-test-suite-cocotb-usb
+	url = https://github.com/antmicro/usb-test-suite-cocotb-usb.git
+[submodule "valentyusb"]
+	path = valentyusb
+	url = https://github.com/antmicro/valentyusb.git

@@ -17,6 +17,11 @@ pip3 install --user -e .
 
 ## Usage
 Use makefile in **testbenches** folder to choose IP core and test module.
-Currently only testing ValentyUSB is supported.
+Currently testing ValentyUSB and asics-ws [usb1_device](https://github.com/www-asics-ws/usb1_device) is supported.
 
-Execute tests by calling `PYTHON_BIN=python3 make sim`
+Execute tests by calling:
+
+```
+cd usb-test-suite-testbenches
+make sim
+```

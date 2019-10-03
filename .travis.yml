@@ -27,7 +27,22 @@ env:
     - T=usb1device  S=test-clocks   OP=decode
 
 install:
-  - sudo apt-get install sigrok-cli -y
+  - sudo apt-get install git-core gcc make autoconf automake libtool pkg-config libglib2.0-dev python3-dev libsigrok-dev
+  # Install sigrok-cli from source, as version from apt is older and too slow
+  - git clone git://sigrok.org/libsigrokdecode
+  - cd libsigrokdecode
+  - ./autogen.sh
+  - ./configure
+  - make
+  - sudo make install
+  - cd -
+  - git clone git://sigrok.org/sigrok-cli
+  - cd sigrok-cli
+  - ./autogen.sh
+  - ./configure
+  - make
+  - sudo make install
+  - cd -
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
   - bash miniconda.sh -b -p $HOME/miniconda
   - source "$HOME/miniconda/etc/profile.d/conda.sh"

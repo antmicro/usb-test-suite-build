@@ -1,0 +1,5 @@
+name: usb-test-suite-env
+channels:
+    - conda-forge
+dependencies:
+    - iverilog

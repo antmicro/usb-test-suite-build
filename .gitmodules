@@ -18,4 +18,4 @@
 	url = https://github.com/antmicro/valentyusb.git
 [submodule "usb1_device"]
 	path = usb1_device
-	url = git@github.com:antmicro/usb1_device.git
+	url = https://github.com:antmicro/usb1_device.git

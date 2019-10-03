@@ -17,8 +17,8 @@ env:
     - T=valentyusb  S=test-w10enum  OP=decode
     - T=valentyusb  S=test-clocks   OP=sim
     - T=valentyusb  S=test-clocks   OP=decode
-    - T=usb1device  S=test-eptri    OP=sim
-    - T=usb1device  S=test-eptri    OP=decode
+    - T=usb1device  S=test-basic    OP=sim
+    - T=usb1device  S=test-basic    OP=decode
     - T=usb1device  S=test-enum     OP=sim
     - T=usb1device  S=test-enum     OP=decode
     - T=usb1device  S=test-w10enum  OP=sim

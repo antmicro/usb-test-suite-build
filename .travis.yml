@@ -34,14 +34,14 @@ install:
   - ./autogen.sh
   - ./configure
   - make
-  - sudo make install
+  - sudo -E make install
   - cd -
   - git clone git://sigrok.org/sigrok-cli
   - cd sigrok-cli
   - ./autogen.sh
   - ./configure
   - make
-  - sudo make install
+  - sudo -E make install
   - cd -
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
   - bash miniconda.sh -b -p $HOME/miniconda

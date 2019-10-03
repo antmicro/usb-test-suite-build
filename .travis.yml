@@ -7,39 +7,38 @@ python:
 cache:
   pip: true
 
-jobs:
-  include:
-    - name: "Run cocotb-usb tests"
-      env:
-        matrix:
-          - T=valentyusb  S=test-eptri    OP=sim
-          - T=valentyusb  S=test-eptri    OP=decode
-          - T=valentyusb  S=test-enum     OP=sim
-          - T=valentyusb  S=test-enum     OP=decode
-          - T=valentyusb  S=test-w10enum  OP=sim
-          - T=valentyusb  S=test-w10enum  OP=decode
-          - T=valentyusb  S=test-clocks   OP=sim
-          - T=valentyusb  S=test-clocks   OP=decode
-          - T=usb1device  S=test-eptri    OP=sim
-          - T=usb1device  S=test-eptri    OP=decode
-          - T=usb1device  S=test-enum     OP=sim
-          - T=usb1device  S=test-enum     OP=decode
-          - T=usb1device  S=test-w10enum  OP=sim
-          - T=usb1device  S=test-w10enum  OP=decode
-          - T=usb1device  S=test-clocks   OP=sim
-          - T=usb1device  S=test-clocks   OP=decode
-      install:
-        - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
-        - bash miniconda.sh -b -p $HOME/miniconda
-        - source "$HOME/miniconda/etc/profile.d/conda.sh"
-        - hash -r
-        - conda config --set always_yes yes --set changeps1 no
-        - conda update -q conda
-        - conda info -a
-        - conda env create --file conf/environment.yml
-        - conda activate usb-test-suite-env
-        - pip install -r conf/requirements.txt
-        - pip install usb-test-suite-cocotb-usb/
-      script:
-        - cd usb-test-suite-testbenches
-        - make TARGET=$T TEST_SCRIPT=$S $OP
+env:
+  matrix:
+    - T=valentyusb  S=test-eptri    OP=sim
+    - T=valentyusb  S=test-eptri    OP=decode
+    - T=valentyusb  S=test-enum     OP=sim
+    - T=valentyusb  S=test-enum     OP=decode
+    - T=valentyusb  S=test-w10enum  OP=sim
+    - T=valentyusb  S=test-w10enum  OP=decode
+    - T=valentyusb  S=test-clocks   OP=sim
+    - T=valentyusb  S=test-clocks   OP=decode
+    - T=usb1device  S=test-eptri    OP=sim
+    - T=usb1device  S=test-eptri    OP=decode
+    - T=usb1device  S=test-enum     OP=sim
+    - T=usb1device  S=test-enum     OP=decode
+    - T=usb1device  S=test-w10enum  OP=sim
+    - T=usb1device  S=test-w10enum  OP=decode
+    - T=usb1device  S=test-clocks   OP=sim
+    - T=usb1device  S=test-clocks   OP=decode
+
+install:
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - source "$HOME/miniconda/etc/profile.d/conda.sh"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda info -a
+  - conda env create --file conf/environment.yml
+  - conda activate usb-test-suite-env
+  - pip install -r conf/requirements.txt
+  - pip install -e usb-test-suite-cocotb-usb/
+
+script:
+  - cd usb-test-suite-testbenches
+  - make TARGET=$T TEST_SCRIPT=$S $OP

@@ -4,9 +4,6 @@
 [submodule "litex"]
 	path = litex
 	url = https://github.com/enjoy-digital/litex.git
-[submodule "litedram"]
-	path = litedram
-	url = https://github.com/enjoy-digital/litedram.git
 [submodule "usb-test-suite-testbenches"]
 	path = usb-test-suite-testbenches
 	url = https://github.com/antmicro/usb-test-suite-testbenches.git

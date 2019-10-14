@@ -38,8 +38,10 @@ install:
   - conda activate usb-test-suite-env
   - pip install -r conf/requirements.txt
   - pip install -e usb-test-suite-cocotb-usb/
+  - litex/litex_setup.py init install
 
 script:
+  - conda activate usb-test-suite-env
   - cd usb-test-suite-testbenches
   - make TARGET=$T TEST_SCRIPT=$S $OP
 

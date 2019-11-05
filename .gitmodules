@@ -16,6 +16,7 @@
 [submodule "usb1_device"]
 	path = usb1_device
 	url = https://github.com/antmicro/usb1_device.git
+	branch = cocotb-usb
 [submodule "foboot"]
 	path = foboot
 	url = https://github.com/im-tomu/foboot.git

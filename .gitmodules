@@ -1,6 +1,3 @@
-[submodule "migen"]
-	path = migen
-	url = https://github.com/m-labs/migen.git
 [submodule "litex"]
 	path = litex
 	url = https://github.com/enjoy-digital/litex.git

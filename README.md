@@ -13,10 +13,12 @@ This will be taken care of by the `setup.sh` script.
 ### Steps
 
 ```
+# Install dependencies
+sudo apt install python3 python3-pip iverilog
 # Clone the repository.
 git clone https://github.com/antmicro/usb-test-suite-build.git
 cd usb-test-suite-build
-# Run script to setup dependencies
+# Run script to setup environment
 ./setup.sh
 ```
 

@@ -1,5 +1,7 @@
 #/bin/sh
 
+set -e
+
 # Initalize submodules
 git submodule update --init --recursive
 

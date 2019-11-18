@@ -9,30 +9,36 @@ cache:
 
 env:
   matrix:
-    - T=valentyusb  S=test-eptri    OP=sim
-    - T=valentyusb  S=test-eptri    OP=decode
-    - T=valentyusb  S=test-enum     OP=sim
-    - T=valentyusb  S=test-enum     OP=decode
-    - T=valentyusb  S=test-w10enum  OP=sim
-    - T=valentyusb  S=test-w10enum  OP=decode
-    - T=valentyusb  S=test-clocks   OP=sim
-    - T=valentyusb  S=test-clocks   OP=decode
-    - T=usb1device  S=test-basic    OP=sim
-    - T=usb1device  S=test-basic    OP=decode
-    - T=usb1device  S=test-enum     OP=sim
-    - T=usb1device  S=test-enum     OP=decode
-    - T=usb1device  S=test-w10enum  OP=sim
-    - T=usb1device  S=test-w10enum  OP=decode
-    - T=usb1device  S=test-clocks   OP=sim
-    - T=usb1device  S=test-clocks   OP=decode
-    - T=foboot      S=test-basic    OP=sim
-    - T=foboot      S=test-basic    OP=decode
-    - T=foboot      S=test-enum     OP=sim
-    - T=foboot      S=test-enum     OP=decode
-    - T=foboot      S=test-w10enum  OP=sim
-    - T=foboot      S=test-w10enum  OP=decode
-    - T=foboot      S=test-clocks   OP=sim
-    - T=foboot      S=test-clocks   OP=decode
+    - T=valentyusb  S=test-eptri       OP=sim
+    - T=valentyusb  S=test-eptri       OP=decode
+    - T=valentyusb  S=test-enum        OP=sim
+    - T=valentyusb  S=test-enum        OP=decode
+    - T=valentyusb  S=test-w10enum     OP=sim
+    - T=valentyusb  S=test-w10enum     OP=decode
+    - T=valentyusb  S=test-clocks      OP=sim
+    - T=valentyusb  S=test-clocks      OP=decode
+    - T=valentyusb  S=test-macOSenum   OP=sim
+    - T=valentyusb  S=test-macOSenum   OP=decode
+    - T=usb1device  S=test-basic       OP=sim
+    - T=usb1device  S=test-basic       OP=decode
+    - T=usb1device  S=test-enum        OP=sim
+    - T=usb1device  S=test-enum        OP=decode
+    - T=usb1device  S=test-w10enum     OP=sim
+    - T=usb1device  S=test-w10enum     OP=decode
+    - T=usb1device  S=test-clocks      OP=sim
+    - T=usb1device  S=test-clocks      OP=decode
+    - T=usb1device  S=test-macOSenum   OP=sim
+    - T=usb1device  S=test-macOSenum   OP=decode
+    - T=foboot      S=test-basic       OP=sim
+    - T=foboot      S=test-basic       OP=decode
+    - T=foboot      S=test-enum        OP=sim
+    - T=foboot      S=test-enum        OP=decode
+    - T=foboot      S=test-w10enum     OP=sim
+    - T=foboot      S=test-w10enum     OP=decode
+    - T=foboot      S=test-clocks      OP=sim
+    - T=foboot      S=test-clocks      OP=decode
+    - T=foboot      S=test-macOSenum   OP=sim
+    - T=foboot      S=test-macOSenum   OP=decode
 
 install:
   # We need to install our library in virtualenv, as cocotb will use this instead of conda 
@@ -56,7 +62,7 @@ install:
 
 script:
   - cd usb-test-suite-testbenches
-  - make TARGET=$T TEST_SCRIPT=$S $OP
+  - travis_wait 30 make TARGET=$T TEST_SCRIPT=$S $OP
 
 jobs:
   include:

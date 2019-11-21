@@ -17,3 +17,7 @@
 [submodule "foboot"]
 	path = foboot
 	url = https://github.com/im-tomu/foboot.git
+[submodule "tinyfpga"]
+	path = tinyfpga
+	url = https://github.com/antmicro/TinyFPGA-Bootloader.git
+	branch = simulation-fixes

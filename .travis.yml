@@ -39,6 +39,16 @@ env:
     - T=foboot      S=test-clocks      OP=decode
     - T=foboot      S=test-macOSenum   OP=sim
     - T=foboot      S=test-macOSenum   OP=decode
+    - T=tinyfpgabl  S=test-basic       OP=sim
+    - T=tinyfpgabl  S=test-basic       OP=decode
+    - T=tinyfpgabl  S=test-enum        OP=sim
+    - T=tinyfpgabl  S=test-enum        OP=decode
+    - T=tinyfpgabl  S=test-w10enum     OP=sim
+    - T=tinyfpgabl  S=test-w10enum     OP=decode
+    - T=tinyfpgabl  S=test-clocks      OP=sim
+    - T=tinyfpgabl  S=test-clocks      OP=decode
+    - T=tinyfpgabl  S=test-macOSenum   OP=sim
+    - T=tinyfpgabl  S=test-macOSenum   OP=decode
 
 install:
   # We need to install our library in virtualenv, as cocotb will use this instead of conda 
@@ -62,7 +72,7 @@ install:
 
 script:
   - cd usb-test-suite-testbenches
-  - travis_wait 30 make TARGET=$T TEST_SCRIPT=$S $OP
+  - make TARGET=$T TEST_SCRIPT=$S $OP
 
 jobs:
   include:

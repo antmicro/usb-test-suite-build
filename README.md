@@ -26,7 +26,7 @@ cd usb-test-suite-build
 ## Usage
 
 Use the Makefile in **usb-test-suite-testbenches** folder to choose the IP core and test module.
-Currently testing ValentyUSB and asics-ws [usb1_device](https://github.com/www-asics-ws/usb1_device) is supported.
+Currently testing [ValentyUSB](https://github.com/im-tomu/valentyusb) and [asics-ws usb1_device](https://github.com/www-asics-ws/usb1_device) is supported.
 
 Execute tests by calling:
 

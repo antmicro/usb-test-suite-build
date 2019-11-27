@@ -19,6 +19,8 @@ env:
     - T=valentyusb  S=test-clocks      OP=decode
     - T=valentyusb  S=test-macOSenum   OP=sim
     - T=valentyusb  S=test-macOSenum   OP=decode
+    - T=valentyusb  S=test-valenty-cdc OP=sim
+    - T=valentyusb  S=test-valenty-cdc OP=decode
     - T=usb1device  S=test-basic       OP=sim
     - T=usb1device  S=test-basic       OP=decode
     - T=usb1device  S=test-sof         OP=sim
@@ -61,6 +63,8 @@ env:
     - T=tinyfpgabl  S=test-clocks      OP=decode
     - T=tinyfpgabl  S=test-macOSenum   OP=sim
     - T=tinyfpgabl  S=test-macOSenum   OP=decode
+    - T=tinyfpgabl  S=test-cdc         OP=sim
+    - T=tinyfpgabl  S=test-cdc         OP=decode
     - T=tntusb      S=test-basic       OP=sim
     - T=tntusb      S=test-basic       OP=decode
     - T=tntusb      S=test-sof         OP=sim

@@ -1,5 +1,9 @@
 # USB test suite
 
+This is a [Cocotb](https://github.com/cocotb/cocotb) based USB 1.1 test suite (to be extended to cover higher versions of the standard) for FPGA IP, with testbenches for a variety of open source USB cores. Cocotb enables testing IPs with Python, which makes for a very robust and developer-friendly workflow.
+
+This repository is a top level repo, with libraries used by the project and specific testbenches and cores as submodules.
+
 ## Setup
 
 It is recommended that you use a virtualenv or similar tool.

@@ -82,6 +82,7 @@ env:
 
 install:
   # We need to install our library in virtualenv, as cocotb will use this instead of conda 
+  - pip install -r conf/requirements.txt
   - pip install -e usb-test-suite-cocotb-usb/
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
   - bash miniconda.sh -b -p $HOME/miniconda
@@ -92,6 +93,7 @@ install:
   - conda info -a
   - conda env create --file conf/environment.yml
   - conda activate usb-test-suite-env
+  # conda complains if it does not have the libs as well
   - pip install -r conf/requirements.txt
   - cd litex
   - ./litex_setup.py init install

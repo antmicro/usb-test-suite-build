@@ -21,3 +21,8 @@ cd -
 wget https://static.dev.sifive.com/dev-tools/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz
 tar -xvf riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz
 rm riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz
+
+# fix script permissions of hex2bin module
+cd "$VIRTUAL_ENV/bin"
+chmod u+x bin2hex.py hex2bin.py hex2dump.py hexdiff.py hexinfo.py hexmerge.py || true
+cd -

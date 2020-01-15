@@ -27,3 +27,6 @@
 [submodule "yosys"]
 	path = yosys
 	url = https://github.com/YosysHQ/yosys.git
+[submodule "fx2-sim"]
+	path = fx2-sim
+	url = https://github.com/antmicro/fx2-sim.git

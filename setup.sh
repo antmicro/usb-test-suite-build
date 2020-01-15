@@ -6,7 +6,7 @@ set -e
 git submodule update --init --recursive
 
 # Setup virtualenv
-pip install virtualenv
+pip install --user virtualenv
 virtualenv --python=python3 env
 
 # Setup dependencies in virtualenv

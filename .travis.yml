@@ -117,4 +117,5 @@ jobs:
         - pip install -r conf/requirements.txt
       script:
         - "flake8 usb-test-suite-testbenches/tests/*.py usb-test-suite-testbenches/wrappers/*.py \
-          usb-test-suite-cocotb-usb/cocotb_usb/*.py usb-test-suite-cocotb-usb/cocotb_usb/usb/*.py"
+          usb-test-suite-cocotb-usb/cocotb_usb/*.py usb-test-suite-cocotb-usb/cocotb_usb/usb/*.py \
+          usb-test-suite-cocotb-usb/cocotb_usb/fx2/*.py"

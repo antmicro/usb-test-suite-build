@@ -87,6 +87,9 @@ install:
   # We need to install our library in virtualenv, as cocotb will use this instead of conda 
   - pip install -r conf/requirements.txt
   - pip install -e usb-test-suite-cocotb-usb/
+  # fix permissions of the script from intelhex python module (in travis virtualenv)
+  - chmod u+x $VIRTUAL_ENV/bin/hex2bin.py
+  # install conda
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
   - bash miniconda.sh -b -p $HOME/miniconda
   - source "$HOME/miniconda/etc/profile.d/conda.sh"
@@ -104,6 +107,12 @@ install:
   - wget https://static.dev.sifive.com/dev-tools/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz
   - tar -xvf riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz
   - export PATH=$PATH:$PWD/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/bin/
+  # sdcc toolchain for fx2
+  - wget "https://sourceforge.net/projects/sdcc/files/sdcc-linux-amd64/3.9.0/sdcc-3.9.0-amd64-unknown-linux2.5.tar.bz2"
+  - tar xjf "sdcc-3.9.0-amd64-unknown-linux2.5.tar.bz2"
+  - export "PATH=$PATH:$PWD/sdcc-3.9.0/bin/"
+  # fix permissions of the script from intelhex python module (in coda venv)
+  - chmod u+x $VIRTUAL_ENV/bin/hex2bin.py
 
 script:
   - cd usb-test-suite-testbenches

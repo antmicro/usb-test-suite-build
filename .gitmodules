@@ -27,3 +27,6 @@
 [submodule "yosys"]
 	path = yosys
 	url = https://github.com/YosysHQ/yosys.git
+[submodule "docs"]
+	path = docs
+	url = https://github.com/antmicro/usb-test-suite-docs

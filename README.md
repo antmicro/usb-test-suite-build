@@ -4,6 +4,8 @@ This is a [Cocotb](https://github.com/cocotb/cocotb) based USB 1.1 test suite (t
 
 This repository is a top level repo, with libraries used by the project and specific testbenches and cores as submodules.
 
+Documentation for this project is hosted at [Read the Docs](https://usb-test-suite.readthedocs.io/en/latest/index.html).
+
 ## Setup
 
 It is recommended that you use a virtualenv or similar tool.
@@ -30,7 +32,13 @@ cd usb-test-suite-build
 ## Usage
 
 Use the Makefile in **usb-test-suite-testbenches** folder to choose the IP core and test module.
-Currently testing [ValentyUSB](https://github.com/im-tomu/valentyusb) and [asics-ws usb1_device](https://github.com/www-asics-ws/usb1_device) is supported.
+Currently we support testing:
+
+* [ValentyUSB](https://github.com/im-tomu/valentyusb)
+* [Foboot](https://github.com/im-tomu/foboot)
+* [asics-ws usb1_device](https://github.com/www-asics-ws/usb1_device)
+* [tnt's USB IP core](https://github.com/smunaut/ice40-playground/tree/master/cores/usb)
+* [TinyFPGA-Bootloader](https://github.com/tinyfpga/TinyFPGA-Bootloader)
 
 Execute tests by calling:
 

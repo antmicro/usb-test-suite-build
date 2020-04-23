@@ -3,7 +3,9 @@
 set -e
 
 # Initalize submodules
-git submodule update --init --recursive
+# Update foboot separately, as it contains a lot of heavy dependencies
+git -c submodule."foboot".update=none submodule update --init --recursive
+git submodule update --init foboot
 
 # Setup virtualenv
 pip install virtualenv
@@ -13,9 +15,8 @@ virtualenv --python=python3 env
 . env/bin/activate
 pip install -r conf/requirements.txt
 pip install -e usb-test-suite-cocotb-usb/
-cd litex
+cp litex/litex_setup.py .
 ./litex_setup.py init install
-cd -
 
 # For building foboot firmware we need a rescv toolchain
 wget https://static.dev.sifive.com/dev-tools/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz

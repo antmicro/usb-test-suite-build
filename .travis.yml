@@ -116,6 +116,7 @@ jobs:
     - stage: "Tests"
       name: "Python PEP8 checks"
       install:
+        - git -c submodule."foboot".update=none submodule update --init --recursive
         - pip install -r conf/requirements.txt
       script:
         - "flake8 usb-test-suite-testbenches/tests/*.py usb-test-suite-testbenches/wrappers/*.py \

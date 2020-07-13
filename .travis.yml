@@ -103,6 +103,7 @@ install:
   - pip install -e usb-test-suite-cocotb-usb/
   - cp litex/litex_setup.py .
   - ./litex_setup.py init install --user
+  - pip install -e valentyusb/  # should be done after installing LiteX
   - wget https://static.dev.sifive.com/dev-tools/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz
   - tar -xvf riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz
   - export PATH=$PATH:$PWD/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/bin/

@@ -125,5 +125,5 @@ jobs:
           tar -xvf riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz
           export PATH=$PATH:$PWD/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/bin/
           cd usb-test-suite-testbenches
-          make TARGET=$T TEST_SCRIPT=$S $OP
+          make TARGET= ${{matrix.T}} TEST_SCRIPT=${{matrix.S}} ${{matrix.OP}}
 

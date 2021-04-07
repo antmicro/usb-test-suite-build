@@ -8,6 +8,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         include:
 
@@ -102,7 +103,7 @@ jobs:
           flake8 usb-test-suite-testbenches/tests/*.py usb-test-suite-testbenches/wrappers/*.py \
           usb-test-suite-cocotb-usb/cocotb_usb/*.py usb-test-suite-cocotb-usb/cocotb_usb/usb/*.py
 
-      - name: Setup env
+      - name: Run tests
         run: |
 
           wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
@@ -123,10 +124,6 @@ jobs:
           wget https://static.dev.sifive.com/dev-tools/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz
           tar -xvf riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz
           export PATH=$PATH:$PWD/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/bin/
-
-      - name: Run tests
-        run: |
-
           cd usb-test-suite-testbenches
           make TARGET=$T TEST_SCRIPT=$S $OP
 

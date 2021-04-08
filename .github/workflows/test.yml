@@ -96,6 +96,7 @@ jobs:
 
           git -c submodule."foboot".update=none submodule update --init --recursive
           pip install -r conf/requirements.txt
+          git submodule update --init foboot
 
       - name: Check format
         run: |

@@ -101,8 +101,7 @@ jobs:
       - name: Check format
         run: |
 
-          flake8 usb-test-suite-testbenches/tests/*.py usb-test-suite-testbenches/wrappers/*.py \
-          usb-test-suite-cocotb-usb/cocotb_usb/*.py usb-test-suite-cocotb-usb/cocotb_usb/usb/*.py
+          flake8 --max-line-length 80 usb-test-suite-testbenches/tests/*.py usb-test-suite-testbenches/wrappers/*.py usb-test-suite-cocotb-usb/cocotb_usb/*.py usb-test-suite-cocotb-usb/cocotb_usb/usb/*.py
 
       - name: Run tests
         run: |
